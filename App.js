@@ -3,25 +3,26 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import Register from './src/screen/Register';
+import Login from './src/screen/Login';
 
 const Stack = createStackNavigator();
 
-function LoginScreen() {
-  return (
-    <View style={styles.container}>
-      <Text>Login Screen</Text>
-    </View>
-  );
-}
+// function LoginScreen() {
+//   return (
+//     <View style={styles.container}>
+//       <Text>Login Screen</Text>
+//     </View>
+//   );
+// }
 
-function RegisterScreen() {
-  return (
-    <View style={styles.container}>
-      <Text>Register Screen</Text>
-    </View>
-  );
-}
+// function RegisterScreen() {
+//   return (
+//     <View style={styles.container}>
+//       <Text>Register Screen</Text>
+//     </View>
+//   );
+// }
 
 function LandingPage() {
 
@@ -40,8 +41,9 @@ function LandingPage() {
       <Image source={require('./assets/icon.png')} style={styles.logo} />
       <Text style={styles.title}>Welcome to Cashier App</Text>
       <Text style={styles.subtitle}>The easiest way to manage your sales</Text>
+      <text style={styles.subtitle}>Get started by creating an account or login if you already have one</text>
       <TouchableOpacity style={styles.button} onPress={handleGetStarted}>
-        <Text style={styles.buttonText}>Get Started</Text>
+        <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
@@ -56,8 +58,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="LandingPage" component={LandingPage} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>
   );
